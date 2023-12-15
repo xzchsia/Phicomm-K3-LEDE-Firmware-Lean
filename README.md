@@ -80,9 +80,8 @@ Recommend: Between `20` and `27`.Power is proportional to signal and inversely p
 - [Lienol](https://github.com/Lienol)
 - [jerrykuku](https://github.com/jerrykuku)
 - [lwz322](https://github.com/lwz322)
-- [kenzok8](https://github.com/kenzok8)
+- [Hill-98](https://github.com/Hill-98)
 - [P3TERX](https://github.com/P3TERX)
 - [yangxu52](https://github.com/yangxu52)
-- [vernesong](https://github.com/vernesong)
 - [haiibo](https://github.com/haiibo)
 - And Every Source Contributor!

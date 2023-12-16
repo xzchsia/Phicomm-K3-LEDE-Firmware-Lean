@@ -13,6 +13,7 @@
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
 - [Passwall](https://github.com/haiibo/openwrt-packages) 🌐
 - [MosDNS](https://github.com/yangxu52/luci-app-k3screenctrl) 🌍
+- [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 
 
 ### 二、无线功率调整

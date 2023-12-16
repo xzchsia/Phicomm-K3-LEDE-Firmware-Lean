@@ -11,7 +11,7 @@
 ### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
-- [Passwall2](https://github.com/haiibo/openwrt-packages) 🌐
+- [VSSR](https://github.com/haiibo/openwrt-packages) 🌐
 - [MosDNS](https://github.com/yangxu52/luci-app-k3screenctrl) 🌍
 - [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 

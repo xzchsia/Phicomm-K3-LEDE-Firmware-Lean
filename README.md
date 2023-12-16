@@ -30,11 +30,10 @@
 
 ## 感谢 🙏
 
-- [Lean](https://github.com/coolsnowwolf)  [Lienol](https://github.com/Lienol)
-- [lwz322](https://github.com/lwz322)  [Hill-98](https://github.com/Hill-98)
-- [kongfl888](https://github.com/kongfl888) [haiibo](https://github.com/haiibo)
-- [P3TERX](https://github.com/P3TERX)  [yangxu52](https://github.com/yangxu52)
+- [Lean](https://github.com/coolsnowwolf)  [Lienol](https://github.com/Lienol)  [lwz322](https://github.com/lwz322)  [Hill-98](https://github.com/Hill-98)  [kongfl888](https://github.com/kongfl888) [haiibo](https://github.com/haiibo)  [P3TERX](https://github.com/P3TERX)  [yangxu52](https://github.com/yangxu52)
+
+- 排名不分先后
 
 如果您对该固件有任何疑问或建议，请随时提出 issue 或联系上述贡献者。
 
-**注意：** 该固件为测试版，使用前请仔细阅读相关文档和风险提示. 🚨
+**注意：** 该固件为自用测试版，使用前请仔细阅读相关文档和风险提示. 🚨

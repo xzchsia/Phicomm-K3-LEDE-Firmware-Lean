@@ -8,13 +8,14 @@
 
 该固件基于 [Lean 的 OpenWrt 源码](https://github.com/coolsnowwolf/lede)，并整合了以下主要插件及功能。
 
-## 主要插件
+### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
 - [Passwall](https://github.com/haiibo/openwrt-packages) 🌐
 - [MosDNS](https://github.com/yangxu52/luci-app-k3screenctrl) 🌍
 
-## 无线功率调整
+
+### 二、无线功率调整
 
 如果需要调整无线功率，可以按照以下步骤进行操作：
 
@@ -26,13 +27,17 @@
    iwconfig wlan1 txpower 20
 ```
 
-3. 保存应用并重启路由器
+3. 保存应用
 
-## 感谢 🙏
+4. 重启路由器
+
+
+### 三、感谢 🙏
 
 - [Lean](https://github.com/coolsnowwolf)  [Lienol](https://github.com/Lienol)  [lwz322](https://github.com/lwz322)  [Hill-98](https://github.com/Hill-98)  [kongfl888](https://github.com/kongfl888) [haiibo](https://github.com/haiibo)  [P3TERX](https://github.com/P3TERX)  [yangxu52](https://github.com/yangxu52)
 
-- 排名不分先后
+
+### 四、其他
 
 如果您对该固件有任何疑问或建议，请随时提出 issue 或联系上述贡献者。
 

@@ -1,5 +1,5 @@
 
-# Phicomm K3 OpenWrt Firmware [自用固件测试版] 🚀
+# Phicomm K3 OpenWrt Firmware 🚀
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/JE668/Phicomm-K3-LEDE-Firmware-Lean/blob/master/LICENSE)
 ![GitHub Stars](https://img.shields.io/github/stars/JE668/Phicomm-K3-LEDE-Firmware-Lean.svg?style=flat-square&label=Stars&logo=github)
 ![GitHub Forks](https://img.shields.io/github/forks/JE668/Phicomm-K3-LEDE-Firmware-Lean.svg?style=flat-square&label=Forks&logo=github)
@@ -21,14 +21,11 @@
 
 1. 进入系统-启动项-本地启动脚本
 2. 复制以下代码至 "exit 0" 之前:
-
 ```shell
    iwconfig wlan0 txpower 20
    iwconfig wlan1 txpower 20
 ```
-
 3. 保存应用
-
 4. 重启路由器
 
 

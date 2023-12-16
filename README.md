@@ -11,7 +11,7 @@
 ### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
-- [Passwall](https://github.com/haiibo/openwrt-packages) 🌐
+- [Passwall2](https://github.com/haiibo/openwrt-packages) 🌐
 - [MosDNS](https://github.com/yangxu52/luci-app-k3screenctrl) 🌍
 - [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 
@@ -23,8 +23,8 @@
 1. 进入系统-启动项-本地启动脚本
 2. 复制以下代码至 "exit 0" 之前:
 ```shell
-   iwconfig wlan0 txpower 20
-   iwconfig wlan1 txpower 20
+iwconfig wlan0 txpower 20
+iwconfig wlan1 txpower 20
 ```
 3. 保存应用
 4. 重启路由器

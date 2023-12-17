@@ -35,6 +35,7 @@ iwconfig wlan1 txpower 20
 1. 启用MosDNS，默认配置，防止DNS泄漏，不勾选DNS转发
 2. 启用ssr-plus，DNS选择使用5335端口服务
 3. 启用Adguardhome，上游DNS填入 127.0.0.1:5335
+   
 ⚠️稳定性测试中
 
 

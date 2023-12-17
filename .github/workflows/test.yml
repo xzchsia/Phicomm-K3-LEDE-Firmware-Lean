@@ -105,8 +105,6 @@ jobs:
 
     - name: Load Custom Feeds
       run: |
-        cd $OPENWRT_PATH
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF $OPENWRT_PATH/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_P1_SH

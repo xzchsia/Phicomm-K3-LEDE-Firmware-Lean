@@ -6,8 +6,8 @@
 # See /LICENSE for more information.
 #
 # https://github.com/JE668/Phicomm-K3-LEDE-Firmware-Lean
-# File name: beta/diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
+# File name: beta/diy-script.sh
+# Description: OpenWrt DIY script
 #
 
 echo '添加Haiibo软件源'

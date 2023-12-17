@@ -5,7 +5,7 @@
 # See /LICENSE for more information.
 #
 # https://github.com/JE668/Phicomm-K3-LEDE-Firmware-Lean
-# File: .github/workflows/bupdate-checker.yml
+# File: .github/workflows/bupdate-checker-beta.yml
 # Description: Source code update checker
 #
 

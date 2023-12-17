@@ -18,7 +18,8 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   CONFIG_FILE: beta/.config
-  DIY_SCRIPT: beta/diy-script.sh
+  DIY_P1_SH: beta/diy-part1.sh  
+  DIY_P2_SH: beta/diy-part2.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -33,9 +34,6 @@ jobs:
     steps:
     - name: Check Server Performance
       run: |
-        echo "警告⚠"
-        echo "分配的服务器性能有限，若选择的插件过多，务必注意CPU性能！"
-        echo -e "已知CPU型号(降序): 7763，8370C，8272CL，8171M，E5-2673\n"
         echo "--------------------------CPU信息--------------------------"
         echo "CPU物理数量: $(cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l)"
         echo "CPU核心数量: $(nproc)"
@@ -105,19 +103,29 @@ jobs:
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}
         prefix: ${{ env.OPENWRT_PATH }}
 
-    - name: Install Feeds
+    - name: Load Custom Feeds
       run: |
         cd $OPENWRT_PATH
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF $OPENWRT_PATH/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd $OPENWRT_PATH
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+
+    - name: Update Feeds
+      run: |
+        cd $OPENWRT_PATH && ./scripts/feeds update -a
+
+    - name: Install Feeds
+      run: |
+        cd $OPENWRT_PATH && ./scripts/feeds install -a
 
     - name: Load Custom Configuration
       run: |
         [ -e files ] && mv files $OPENWRT_PATH/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE $OPENWRT_PATH/.config
-        chmod +x $DIY_SCRIPT
+        chmod +x $DIY_P2_SH
         cd $OPENWRT_PATH
-        $GITHUB_WORKSPACE/$DIY_SCRIPT
+        $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Download DL Package
       run: |

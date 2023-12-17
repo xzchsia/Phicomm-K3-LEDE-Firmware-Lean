@@ -11,7 +11,7 @@
 ### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
-- [VSSR](https://github.com/haiibo/openwrt-packages) / [SSR-plus](https://github.com/kenzok8/openwrt-packages) 🌐
+- [VSSR(测试固件)](https://github.com/haiibo/openwrt-packages) / [SSR-plus(稳定固件)](https://github.com/kenzok8/openwrt-packages) 🌐
 - [MosDNS](https://github.com/haiibo/openwrt-packages) 🌍
 - [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 
@@ -33,10 +33,10 @@ iwconfig wlan1 txpower 20
 ### 三、插件使用方法
 
 1. 启用MosDNS，默认配置，防止DNS泄漏，不勾选DNS转发
-2. 启用ssr-plus，DNS选择使用5335端口服务
-3. 启用Adguardhome，上游DNS填入 127.0.0.1:5335
+2. 启用ssr-plus/vssr，DNS选择使用5335端口服务
+3. 启用Adguardhome，选择“转发53端口到Adguardhome”，上游DNS填入“127.0.0.1:5335”
    
-⚠️稳定性测试中
+⚠️稳定性测试中，目前可用，外网打开速度加快，adguardhome延时比不启用MosDNS稍高
 
 
 ### 四、感谢 🙏

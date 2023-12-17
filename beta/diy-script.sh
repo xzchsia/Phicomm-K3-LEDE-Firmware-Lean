@@ -14,6 +14,9 @@ echo '添加Haiibo软件源'
 sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 echo '=========Add Haiibo source OK!========='
 
+./scripts/feeds update -a
+./scripts/feeds install -a
+
 echo '添加AdguardHome'
 rm -rf feeds/haiibo/adguardhome
 rm -rf feeds/haiibo/luci-app-adguardhome
@@ -46,10 +49,7 @@ echo '替换无线驱动'
 wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
 
-./scripts/feeds update -a
-./scripts/feeds install -a
-
-echo 'Modify default IP'
+echo '修改默认IP'
 sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
 
 echo '修改主机名'
@@ -70,7 +70,3 @@ sed -i 's/\/var\/upnp.leases/\/tmp\/upnp.leases/g' feeds/packages/net/miniupnpd/
 cat feeds/packages/net/miniupnpd/files/upnpd.config |grep upnp_lease_file
 echo '=========Alert upnp binding file directory!========='
 
-添加主页的CPU温度显示
-sed -i "/<tr><td width=\"33%\"><%:Load Average%>/a \ \t\t<tr><td width=\"33%\"><%:CPU Temperature%></td><td><%=luci.sys.exec(\"sed 's/../&./g' /sys/class/thermal/thermal_zone0/temp|cut -c1-4\")%></td></tr>" feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
-cat feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm |grep Temperature
-echo "Add CPU Temperature in Admin Index OK====================="

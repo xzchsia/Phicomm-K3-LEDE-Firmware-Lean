@@ -21,20 +21,14 @@ echo '添加Haiibo软件源'
 sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 echo '=========Add Haiibo source OK!========='
 
-# echo '添加my-dnshelper'
-# rm -rf package/lean/luci-app-my-dnshelper
-# git clone https://github.com/kongfl888/openwrt-my-dnshelper/ package/lean/luci-app-my-dnshelper
-# echo '=========Add my-dnshelper OK!========='
-
-# echo '添加adbyby-plus-lite'
-# rm -rf package/lean/luci-app-adbyby-plus
-# git clone https://github.com/kongfl888/luci-app-adbyby-plus-lite package/lean/luci-app-adbyby-plus
-# echo '=========Add adbyby-plus-lite OK!========='
-
-# echo '添加OpenClash'
-# rm -rf package/lean/luci-app-openclash
-# svn checkout https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/lean/luci-app-openclash
-# echo '=========Add OpenClash source OK!========='
+echo '添加AdguardHome'
+rm -rf feeds/haiibo/adguardhome
+rm -rf feeds/haiibo/luci-app-adguardhome
+rm -rf package/feeds/haiibo/luci-app-adguardhome
+rm -rf package/feeds/haiibo/adguardhome
+rm -rf package/lean/luci-app-adguardhome
+git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
+echo '=========Add AdguardHome OK!========='
 
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl

@@ -11,8 +11,8 @@
 ### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
-- [VSSR](https://github.com/haiibo/openwrt-packages) 🌐
-- [MosDNS](https://github.com/yangxu52/luci-app-k3screenctrl) 🌍
+- [VSSR](https://github.com/haiibo/openwrt-packages) / [SSR-plus](https://github.com/kenzok8/openwrt-packages) 🌐
+- [MosDNS](https://github.com/haiibo/openwrt-packages)) 🌍
 - [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 
 
@@ -30,12 +30,20 @@ iwconfig wlan1 txpower 20
 4. 重启路由器
 
 
-### 三、感谢 🙏
+### 三、插件使用方法
 
-- [Lean](https://github.com/coolsnowwolf)  [Lienol](https://github.com/Lienol)  [lwz322](https://github.com/lwz322)  [Hill-98](https://github.com/Hill-98)  [kongfl888](https://github.com/kongfl888) [haiibo](https://github.com/haiibo)  [P3TERX](https://github.com/P3TERX)  [yangxu52](https://github.com/yangxu52)
+1. 启用MosDNS，默认配置，防止DNS泄漏，不勾选DNS转发
+2. 启用ssr-plus，DNS选择使用5335端口服务
+3. 启用Adguardhome，上游DNS填入 127.0.0.1:5335
+⚠️稳定性测试中
 
 
-### 四、其他
+### 四、感谢 🙏
+
+- [Lean](https://github.com/coolsnowwolf)  [Lienol](https://github.com/Lienol)  [lwz322](https://github.com/lwz322)  [Hill-98](https://github.com/Hill-98)  [kongfl888](https://github.com/kongfl888) [haiibo](https://github.com/haiibo)  [P3TERX](https://github.com/P3TERX)  [yangxu52](https://github.com/yangxu52)  [kenzok8](https://github.com/kenzok8) 
+
+
+### 五、其他
 
 如果您对该固件有任何疑问或建议，请随时提出 issue 或联系上述贡献者。
 

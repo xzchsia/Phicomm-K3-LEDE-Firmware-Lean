@@ -17,7 +17,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: beta.config
+  CONFIG_FILE: beta/.config
   DIY_SCRIPT: beta/diy-script.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true

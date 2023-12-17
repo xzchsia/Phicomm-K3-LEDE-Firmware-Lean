@@ -12,7 +12,7 @@
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
 - [VSSR](https://github.com/haiibo/openwrt-packages) / [SSR-plus](https://github.com/kenzok8/openwrt-packages) 🌐
-- [MosDNS](https://github.com/haiibo/openwrt-packages)) 🌍
+- [MosDNS](https://github.com/haiibo/openwrt-packages) 🌍
 - [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
 
 

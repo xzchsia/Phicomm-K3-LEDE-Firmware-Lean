@@ -38,12 +38,14 @@ iwconfig wlan1 txpower 20
 MosDNS:
 1.配置文件：自定义
 2.修改配置
--# 转发至本地服务器
+```shell
+# 转发至本地服务器
   - tag: forward_local
     type: forward
     args:
       upstreams:
         - addr: 127.0.0.1:5333（修改配置文件，此处端口为adguardhome端口）
+```
 3.启用&保存&应用
 
 Adguardhome:
@@ -59,13 +61,14 @@ SmartDNS:
 1.正常配置
 2.Adguardhome上游DNS服务器填 127.0.0.1:6053（此处端口为SmartDNS基本设置处的本地端口）
 3.MosDNS修改配置
--# 转发至远程服务器
+```shell
+# 转发至远程服务器
   - tag: forward_remote
     type: forward
     args:
       upstreams:
         - addr: 127.0.0.1:xxxx（此处端口为SmartDNS第二DNS服务器处的本地端口，此端口默认为5335与MosDNS冲突，必须修改）
-   
+```   
 ⚠️稳定性测试中，有效分流，adguardhome延时8ms
 
 

@@ -11,9 +11,10 @@
 ### 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
-- [VSSR(测试固件)](https://github.com/haiibo/openwrt-packages) / [SSR-plus(稳定固件)](https://github.com/kenzok8/openwrt-packages) 🌐
-- [MosDNS](https://github.com/haiibo/openwrt-packages) 🌍
-- [K3 Screen](https://github.com/yangxu52/luci-app-k3screenctrl) 🖥️
+- [SSR-plus](https://github.com/fw876/helloworld) 🌐
+- [MosDNS](https://github.com/sbwml/luci-app-mosdns) 🌍
+- [SmartDNS](https://github.com/pymumu/openwrt-smartdns)🛜
+- [K3 Screen](https://github.com/lwz322/k3screenctrl_build))🖥️
 
 
 ### 二、无线功率调整
@@ -23,8 +24,10 @@
 1. 进入系统-启动项-本地启动脚本
 2. 复制以下代码至 "exit 0" 之前:
 ```shell
+
 iwconfig wlan0 txpower 20
 iwconfig wlan1 txpower 20
+
 ```
 3. 保存应用
 4. 重启路由器
@@ -32,11 +35,38 @@ iwconfig wlan1 txpower 20
 
 ### 三、插件使用方法
 
-1. 启用MosDNS，默认配置，防止DNS泄漏，不勾选DNS转发
-2. 启用ssr-plus/vssr，DNS选择使用5335端口服务
-3. 启用Adguardhome，选择“转发53端口到Adguardhome”，上游DNS填入“127.0.0.1:5335”
+MosDNS:
+1.配置文件：自定义
+2.修改配置
+-# 转发至本地服务器
+  - tag: forward_local
+    type: forward
+    args:
+      upstreams:
+        - addr: 127.0.0.1:5333（修改配置文件，此处端口为adguardhome端口）
+3.启用&保存&应用
+
+Adguardhome:
+1.重定向选择“无”
+2.其他配置照常配置
+
+SSR-Plus:
+1.正常订阅
+2.DNS解析方式选择“使用本机端口为5335的DNS服务”
+
+###进阶用法：
+SmartDNS:
+1.正常配置
+2.Adguardhome上游DNS服务器填 127.0.0.1:6053（此处端口为SmartDNS基本设置处的本地端口）
+3.MosDNS修改配置
+-# 转发至远程服务器
+  - tag: forward_remote
+    type: forward
+    args:
+      upstreams:
+        - addr: 127.0.0.1:xxxx（此处端口为SmartDNS第二DNS服务器处的本地端口，此端口默认为5335与MosDNS冲突，必须修改）
    
-⚠️稳定性测试中，目前可用，外网打开速度加快，adguardhome延时比不启用MosDNS稍高
+⚠️稳定性测试中，有效分流，adguardhome延时8ms
 
 
 ### 四、感谢 🙏

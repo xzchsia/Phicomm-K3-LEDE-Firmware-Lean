@@ -35,7 +35,7 @@ iwconfig wlan1 txpower 20
 
 ## 三、插件使用方法
 
-###MosDNS:
+### MosDNS:
 
 1.配置文件：自定义
 2.修改配置
@@ -51,21 +51,21 @@ iwconfig wlan1 txpower 20
 
 
 
-###Adguardhome:
+### Adguardhome:
 
 1.重定向选择“无”
 2.其他配置照常配置
 
 
-###SSR-Plus:
+### SSR-Plus:
 
 1.正常订阅
 2.DNS解析方式选择“使用本机端口为5335的DNS服务”
 
 
-###进阶用法：
+## 进阶用法：
 
-###SmartDNS:
+### SmartDNS:
 
 1.正常配置
 2.Adguardhome上游DNS服务器填 127.0.0.1:6053（此处端口为SmartDNS基本设置处的本地端口）

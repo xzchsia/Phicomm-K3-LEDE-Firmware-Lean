@@ -14,7 +14,7 @@
 - [SSR-plus](https://github.com/fw876/helloworld) 🌐
 - [MosDNS](https://github.com/sbwml/luci-app-mosdns) 🌍
 - [SmartDNS](https://github.com/pymumu/openwrt-smartdns)🛜
-- [K3 Screen](https://github.com/lwz322/k3screenctrl_build))🖥️
+- [K3 Screen](https://github.com/lwz322/k3screenctrl_build)🖥️
 
 
 ### 二、无线功率调整
@@ -36,7 +36,9 @@ iwconfig wlan1 txpower 20
 ### 三、插件使用方法
 
 MosDNS:
+
 1.配置文件：自定义
+
 2.修改配置
 ```shell
 # 转发至本地服务器
@@ -46,20 +48,32 @@ MosDNS:
       upstreams:
         - addr: 127.0.0.1:5333（修改配置文件，此处端口为adguardhome端口）
 ```
+
 3.启用&保存&应用
 
+
 Adguardhome:
+
 1.重定向选择“无”
+
 2.其他配置照常配置
 
+
 SSR-Plus:
+
 1.正常订阅
+
 2.DNS解析方式选择“使用本机端口为5335的DNS服务”
 
+
 ###进阶用法：
+
 SmartDNS:
+
 1.正常配置
+
 2.Adguardhome上游DNS服务器填 127.0.0.1:6053（此处端口为SmartDNS基本设置处的本地端口）
+
 3.MosDNS修改配置
 ```shell
 # 转发至远程服务器
@@ -69,6 +83,7 @@ SmartDNS:
       upstreams:
         - addr: 127.0.0.1:xxxx（此处端口为SmartDNS第二DNS服务器处的本地端口，此端口默认为5335与MosDNS冲突，必须修改）
 ```   
+
 ⚠️稳定性测试中，有效分流，adguardhome延时8ms
 
 

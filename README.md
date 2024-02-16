@@ -76,7 +76,6 @@ iwconfig wlan1 txpower 20
 ```shell
 
 127.0.0.1:5338
-127.0.0.1:5339
 
 ```
    Bootstrap DNS服务器

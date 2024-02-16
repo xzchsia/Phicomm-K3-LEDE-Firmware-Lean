@@ -8,6 +8,8 @@
 
 该固件基于 [Lean 的 OpenWrt 源码](https://github.com/coolsnowwolf/lede)，并整合了以下主要插件及功能。
 
+后台地址：[10.0.0.1](10.0.0.1)
+
 ## 一、主要插件
 
 - [Adguardhome](https://github.com/kongfl888/luci-app-adguardhome) 🛡️
@@ -58,7 +60,7 @@ iwconfig wlan1 txpower 20
 3. 其他配置照常配置，日志记录设置为2小时，防止爆内存
 
 
-### SSR-Plus:
+### SSR-Plus/VSSR:
 
 1. 正常订阅
 2. DNS解析方式选择“使用本机端口为5335的DNS服务”
@@ -90,11 +92,14 @@ iwconfig wlan1 txpower 20
   - tag: lazy_cache
     type: cache
     args:
-      size: 0（此处修改为0，由SmartDNS进行缓存）
+      size: 0
       lazy_cache_ttl: 3600
       dump_file: "/etc/mosdns/cache.dump"
       dump_interval: 600
-``` 
+```
+
+      size: 0（此处修改为0，由SmartDNS进行缓存）
+
 ```shell
 # 转发至远程服务器
   - tag: forward_remote

@@ -45,7 +45,7 @@ iwconfig wlan1 txpower 20
     type: forward
     args:
       upstreams:
-        - addr: 127.0.0.1:5333（修改配置文件，此处端口为adguardhome端口）
+        - addr: 127.0.0.1:5333
 ```
 3. 启用&保存&应用
 
@@ -54,7 +54,8 @@ iwconfig wlan1 txpower 20
 ### Adguardhome:
 
 1. 重定向选择“无”
-2. 其他配置照常配置
+2. 本地端口设置为5333
+3. 其他配置照常配置，日志记录设置为2小时，防止爆内存
 
 
 ### SSR-Plus:
@@ -67,16 +68,40 @@ iwconfig wlan1 txpower 20
 
 ### SmartDNS:
 
-1. 正常配置
-2. Adguardhome上游DNS服务器填 127.0.0.1:6053（此处端口为SmartDNS基本设置处的本地端口）
+1. SmartDNS正常配置，本地端口修改为5338，第二DNS端口修改为5339
+2. Adguardhome:
+   上游 DNS服务器
+```shell
+
+127.0.0.1:5338
+127.0.0.1:5339
+
+```
+   Bootstrap DNS服务器
+```shell
+
+127.0.0.1:5338
+
+```
+
 3. MosDNS修改配置
+```shell
+# 缓存
+  - tag: lazy_cache
+    type: cache
+    args:
+      size: 0（此处修改为0，由SmartDNS进行缓存）
+      lazy_cache_ttl: 3600
+      dump_file: "/etc/mosdns/cache.dump"
+      dump_interval: 600
+``` 
 ```shell
 # 转发至远程服务器
   - tag: forward_remote
     type: forward
     args:
       upstreams:
-        - addr: 127.0.0.1:xxxx（此处端口为SmartDNS第二DNS服务器处的本地端口，此端口默认为5335与MosDNS冲突，必须修改）
+        - addr: 127.0.0.1:5339
 ```   
 
 ⚠️稳定性测试中，有效分流，adguardhome延时8ms

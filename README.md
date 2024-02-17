@@ -72,12 +72,14 @@ iwconfig wlan1 txpower 20
 
 1. SmartDNS正常配置，本地端口修改为5338，第二DNS端口修改为5339
 2. Adguardhome:
+   
    上游 DNS服务器
 ```shell
 
 127.0.0.1:5338
 
 ```
+
    Bootstrap DNS服务器
 ```shell
 
@@ -97,8 +99,6 @@ iwconfig wlan1 txpower 20
       dump_interval: 600
 ```
 
-      size: 0（此处修改为0，由SmartDNS进行缓存）
-
 ```shell
 # 转发至远程服务器
   - tag: forward_remote
@@ -108,7 +108,7 @@ iwconfig wlan1 txpower 20
         - addr: 127.0.0.1:5339
 ```   
 
-⚠️稳定性测试中，有效分流，adguardhome延时8ms
+⚠️稳定性测试中
 
 
 ## 四、感谢 🙏

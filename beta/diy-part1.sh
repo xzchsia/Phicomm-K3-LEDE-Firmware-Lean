@@ -30,6 +30,17 @@ rm -rf package/lean/luci-app-adguardhome
 git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
 echo '=========Add AdguardHome OK!========='
 
+echo '添加MosDNS'
+rm -rf feeds/packages/net/v2ray-geodata
+rm -rf feeds/haiibo/luci-app-mosdns
+rm -rf feeds/haiibo/mosdns
+rm -rf package/feeds/haiibo/luci-app-mosdns
+rm -rf package/feeds/haiibo/mosdns
+rm -rf package/lean/luci-app-adguardhome
+git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+echo '=========Add MosDNS OK!========='
+
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl
 git clone https://github.com/JE668/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl

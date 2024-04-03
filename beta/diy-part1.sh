@@ -36,7 +36,8 @@ rm -rf feeds/haiibo/luci-app-mosdns
 rm -rf feeds/haiibo/mosdns
 rm -rf package/feeds/haiibo/luci-app-mosdns
 rm -rf package/feeds/haiibo/mosdns
-rm -rf package/lean/luci-app-adguardhome
+find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+find ./ | grep Makefile | grep mosdns | xargs rm -f
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 echo '=========Add MosDNS OK!========='

@@ -17,30 +17,34 @@
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
-echo '添加Haiibo软件源'
-sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
-echo '=========Add Haiibo source OK!========='
+# echo '添加Haiibo软件源'
+# sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
+# echo '=========Add Haiibo source OK!========='
 
-echo '添加AdguardHome'
-rm -rf feeds/haiibo/adguardhome
-rm -rf feeds/haiibo/luci-app-adguardhome
-rm -rf package/feeds/haiibo/luci-app-adguardhome
-rm -rf package/feeds/haiibo/adguardhome
-rm -rf package/lean/luci-app-adguardhome
-git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
-echo '=========Add AdguardHome OK!========='
+echo '添加kenzok8 small-package'
+sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+echo '=========Add kenzok8 source OK!========='
 
-echo '添加MosDNS'
-rm -rf feeds/packages/net/v2ray-geodata
-rm -rf feeds/haiibo/luci-app-mosdns
-rm -rf feeds/haiibo/mosdns
-rm -rf package/feeds/haiibo/luci-app-mosdns
-rm -rf package/feeds/haiibo/mosdns
-find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-find ./ | grep Makefile | grep mosdns | xargs rm -f
-git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-echo '=========Add MosDNS OK!========='
+# echo '添加AdguardHome'
+# rm -rf feeds/haiibo/adguardhome
+# rm -rf feeds/haiibo/luci-app-adguardhome
+# rm -rf package/feeds/haiibo/luci-app-adguardhome
+# rm -rf package/feeds/haiibo/adguardhome
+# rm -rf package/lean/luci-app-adguardhome
+# git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
+# echo '=========Add AdguardHome OK!========='
+
+# echo '添加MosDNS'
+# rm -rf feeds/packages/net/v2ray-geodata
+# rm -rf feeds/haiibo/luci-app-mosdns
+# rm -rf feeds/haiibo/mosdns
+# rm -rf package/feeds/haiibo/luci-app-mosdns
+# rm -rf package/feeds/haiibo/mosdns
+# find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
+# find ./ | grep Makefile | grep mosdns | xargs rm -f
+# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
+# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+# echo '=========Add MosDNS OK!========='
 
 echo '添加lwz322的K3屏幕插件'
 rm -rf package/lean/luci-app-k3screenctrl

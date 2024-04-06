@@ -21,10 +21,10 @@
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 # echo '=========Add Haiibo source OK!========='
 
-echo '添加kenzok8 openwrt-package'
-sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
-echo '=========Add kenzok8 source OK!========='
+# echo '添加kenzok8 openwrt-package'
+# sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
+# sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
+# echo '=========Add kenzok8 source OK!========='
 
 # echo '添加kenzok8 small-package'
 # sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
@@ -51,15 +51,15 @@ echo '=========Add kenzok8 source OK!========='
 # git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # echo '=========Add MosDNS OK!========='
 
-echo '添加lwz322的K3屏幕插件'
-rm -rf package/lean/luci-app-k3screenctrl
-git clone https://github.com/JE668/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
-echo '=========Add k3screen plug OK!========='
+# echo '添加lwz322的K3屏幕插件'
+# rm -rf package/lean/luci-app-k3screenctrl
+# git clone https://github.com/JE668/luci-app-k3screenctrl.git package/lean/luci-app-k3screenctrl
+# echo '=========Add k3screen plug OK!========='
 
-echo '替换lwz322的K3屏幕驱动插件'
-rm -rf package/lean/k3screenctrl
-git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenctrl/
-echo '=========Replace k3screen drive plug OK!========='
+# echo '替换lwz322的K3屏幕驱动插件'
+# rm -rf package/lean/k3screenctrl
+# git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenctrl/
+# echo '=========Replace k3screen drive plug OK!========='
 
 echo '移除bcm53xx中的其他机型'
 sed -i '421,453d' target/linux/bcm53xx/image/Makefile

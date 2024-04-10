@@ -42,6 +42,11 @@ rm -rf package/lean/k3screenctrl
 git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenctrl/
 echo '=========Replace k3screen drive plug OK!========='
 
+echo '添加OpenClash'
+rm -rf package/lean/luci-app-openclash
+git clone https://github.com/vernesong/OpenClash package/lean/luci-app-openclash
+echo '=========Add OpenClash source OK!========='
+
 # echo '添加Haiibo软件源'
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 # echo '=========Add Haiibo source OK!========='

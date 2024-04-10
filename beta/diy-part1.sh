@@ -33,7 +33,8 @@ git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenc
 echo '=========Replace k3screen drive plug OK!========='
 
 echo '添加SSR-Plus软件源'
-# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+sed -i "/helloworld/d" "feeds.conf.default"
+echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 echo '=========Add SSR-Plus source OK!========='
 
 echo '添加passwall软件源'

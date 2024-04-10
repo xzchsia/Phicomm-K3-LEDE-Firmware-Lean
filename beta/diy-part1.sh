@@ -39,7 +39,7 @@ echo '=========Add SSR-Plus source OK!========='
 
 echo '添加passwall软件源'
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 echo '=========Add passwall source OK!========='
 
 # echo '添加Haiibo软件源'

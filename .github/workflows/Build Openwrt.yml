@@ -17,9 +17,9 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: beta/.config
-  DIY_P1_SH: beta/diy-part1.sh  
-  DIY_P2_SH: beta/diy-part2.sh
+  CONFIG_FILE: .config
+  DIY_P1_SH: diy-part1.sh  
+  DIY_P2_SH: diy-part2.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
@@ -193,7 +193,7 @@ jobs:
           - 🌐 默认地址: 10.0.0.1
           - 🔑 默认密码: password
           ### 🧊 固件版本
-          - 固件编译前最后一次➦[主源码](${{ env.REPO_URL }})更新记录
+          - 最后一次➦[主源码](${{ env.REPO_URL }})更新记录
           - ${{ env.COMMIT_AUTHOR }}
           - ${{ env.COMMIT_DATE }}
           - ${{ env.COMMIT_MESSAGE }}

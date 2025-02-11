@@ -13,13 +13,6 @@
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-# 打印当前路径
-echo 'current path ls:'
-ls -l
-echo '---wifi drive:---'
-ls -l package/lean/k3-firmware/files/*
-echo '---image makefile:---'
-ls -l target/linux/bcm53xx/image/*
 
 echo '添加SSR-Plus软件源'
 sed -i "/helloworld/d" "feeds.conf.default"
@@ -90,12 +83,12 @@ echo '替换无线驱动'
 # 旧地址：package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 # 新地址：package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
 
-# mkdir -p package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/
 # wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 # rm -rf package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
 wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
 
+# 此处对当前的路径进行了修改，所以如果需要使用github代码的默认路径，需要把修改放在上面，或者在此处的代码执行完成后，回到lede项目的根目录。
 echo '添加OpenClash'
 rm -rf package/lean/luci-app-openclash
 mkdir package/luci-app-openclash

@@ -14,10 +14,12 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # 打印当前路径
-echo 'current path:'
-echo $PWD
 echo 'current path ls:'
-ls
+ls -l
+echo '---wifi drive:---'
+ls -l package/lean/k3-firmware/files/*
+echo '---image makefile:---'
+ls -ltarget/linux/bcm53xx/image/*
 
 echo '添加SSR-Plus软件源'
 sed -i "/helloworld/d" "feeds.conf.default"

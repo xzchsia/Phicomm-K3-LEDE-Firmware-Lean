@@ -16,6 +16,8 @@
 # 打印当前路径
 echo 'current path:'
 echo $PWD
+echo 'current path ls:'
+ls
 
 echo '添加SSR-Plus软件源'
 sed -i "/helloworld/d" "feeds.conf.default"

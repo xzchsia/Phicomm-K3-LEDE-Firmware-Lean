@@ -19,7 +19,7 @@ ls -l
 echo '---wifi drive:---'
 ls -l package/lean/k3-firmware/files/*
 echo '---image makefile:---'
-ls -ltarget/linux/bcm53xx/image/*
+ls -l target/linux/bcm53xx/image/*
 
 echo '添加SSR-Plus软件源'
 sed -i "/helloworld/d" "feeds.conf.default"

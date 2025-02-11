@@ -91,7 +91,11 @@ echo '=========Remove other devices of bcm53xx OK!========='
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
 firmware='69027'
 echo '替换无线驱动'
-mkdir -p package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/
-wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-# wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+# LEDE的K3的无线驱动的路径调整了，这里根据最新路径进行重新调整
+# 旧地址：package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
+# 新地址：package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+# mkdir -p package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/
+# wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
+rm -rf package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='

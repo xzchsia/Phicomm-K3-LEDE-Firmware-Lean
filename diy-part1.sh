@@ -13,6 +13,10 @@
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
+# 打印当前路径
+echo 'current path:'
+echo $PWD
+
 echo '添加SSR-Plus软件源'
 sed -i "/helloworld/d" "feeds.conf.default"
 echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
@@ -83,8 +87,8 @@ echo '=========Add OpenClash source OK!========='
 echo '移除bcm53xx中的其他机型'
 # sed -i '421,453d' target/linux/bcm53xx/image/Makefile
 # sed -i '140,412d' target/linux/bcm53xx/image/Makefile
-sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' ./target/linux/bcm53xx/image/Makefile
-sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' ./target/linux/bcm53xx/image/Makefile
+sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
+sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bcm53xx/image/Makefile
 # sed -n '140,146p' target/linux/bcm53xx/image/Makefile
 echo '=========Remove other devices of bcm53xx OK!========='
 
@@ -94,8 +98,9 @@ echo '替换无线驱动'
 # LEDE的K3的无线驱动的路径调整了，这里根据最新路径进行重新调整
 # 旧地址：package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 # 新地址：package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+
 # mkdir -p package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/
 # wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-rm -rf package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
-wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O ./package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+# rm -rf package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='

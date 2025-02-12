@@ -69,6 +69,8 @@ jobs:
 
     - name: 检验 - Checkout
       uses: actions/checkout@main
+      with:
+          fetch-depth: 0
 
     - name: 拉取源代码 - Clone Source Code
       run: |
@@ -99,7 +101,7 @@ jobs:
 
     - name: 尝试建立缓存工具链 - Cache Toolchain
       if: env.CACHE_TOOLCHAIN == 'true'
-      uses: klever1988/cachewrtbuild@main
+      uses: stupidloud/cachewrtbuild@main
       with:
         ccache: true
         mixkey: ${{ env.SOURCE_REPO }}-${{ env.REPO_BRANCH }}-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}

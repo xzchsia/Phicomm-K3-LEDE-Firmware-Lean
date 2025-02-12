@@ -30,6 +30,14 @@ iwconfig wlan0 txpower 20
 iwconfig wlan1 txpower 20
 
 ```
+经过测试，没有 `iwconfig` 命令，使用 `iw` 命令代替  
+```shell
+
+iw dev wlan0 set txpower fixed 2000
+iw dev wlan1 set txpower fixed 2000
+
+```
+
 3. 保存&应用
 4. 重启路由器
 

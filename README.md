@@ -8,7 +8,7 @@
 
 该固件基于 [Lean 的 OpenWrt 源码](https://github.com/coolsnowwolf/lede)，并整合了以下主要插件及功能。
 
-后台地址：[192.168.11.1](192.168.11.1)
+后台地址：[10.0.0.1](10.0.0.1)
 
 ## 一、主要插件
 
@@ -107,7 +107,7 @@ sleep 1
       - exec: $forward_local
       - matches:
         - has_resp
-        - resp_ip 192.168.11.1/24 # 局域网IP段
+        - resp_ip 10.0.0.1/24 # 局域网IP段
         exec: ttl 1800-0
 
   # 国外解析

@@ -76,15 +76,15 @@ sed -i 's/$(USB3_PACKAGES) k3screenctrl/luci-app-k3screenctrl/g' target/linux/bc
 # sed -n '140,146p' target/linux/bcm53xx/image/Makefile
 echo '=========Remove other devices of bcm53xx OK!========='
 
-# echo '替换无线驱动'
-# ##1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
-# firmware='69027'
-# ### LEDE的K3的无线驱动的路径调整了，这里根据最新路径进行重新调整
-# ### 旧路径：package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-# ### 新路径：package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
-# # wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-# wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
-# echo '=========Replace k3 wireless firmware OK!========='
+echo '替换无线驱动'
+##1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
+firmware='69027'
+### LEDE的K3的无线驱动的路径调整了，这里根据最新路径进行重新调整
+### 旧路径：package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
+### 新路径：package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+# wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
+wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-firmware/files/brcmfmac4366c-pcie.bin
+echo '=========Replace k3 wireless firmware OK!========='
 
 # 此处对当前的路径进行了修改，所以如果需要使用github代码的默认路径，需要把修改放在上面，或者在此处的代码执行完成后，回到lede项目的根目录。
 echo '添加OpenClash'
